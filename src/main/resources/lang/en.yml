@@ -18,8 +18,15 @@ item:
   reviverName: "<dark_red><b>Revive Totem"
   reviverLore:
     - "<red>Remember who was your true friend!"
+  heartName: "<dark_red><b>Additional heart"
+  heartLore:
+    - "<red>It was made from huge power..."
+  maxHearts: "<red>You can't use more additional hearts!"
 gui:
   reviveGuiName: "<gray>>> <dark_red>REVIVE TOKEN MENU <gray><<"
   revivePlayerName: "<green>Revive <yellow><b><player>"
   revivePlayerLore:
     - "<red>Are you sure that it is a good idea?"
+command:
+  changedLives: "<green>Lives of selected player has been changed!"
+  changedLivesTarget: "<green>Admin changed your lives!"

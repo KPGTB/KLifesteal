@@ -1,3 +1,4 @@
 lang: "en"
 maxLives: 120 # 1-120
 defaultLives: 3
+maxHP: 40.0

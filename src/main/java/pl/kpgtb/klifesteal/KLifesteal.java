@@ -26,13 +26,17 @@ import com.github.kpgtb.ktools.manager.ui.bar.BarIcons;
 import com.github.kpgtb.ktools.manager.ui.bar.BarManager;
 import com.github.kpgtb.ktools.manager.ui.bar.KBar;
 import com.github.kpgtb.ktools.manager.ui.bar.save.ServerCacheMethod;
+import com.github.kpgtb.ktools.manager.updater.SpigotUpdater;
+import com.github.kpgtb.ktools.manager.updater.UpdaterManager;
 import com.github.kpgtb.ktools.util.bstats.Metrics;
 import com.github.kpgtb.ktools.util.file.PackageUtil;
 import com.github.kpgtb.ktools.util.wrapper.ToolsInitializer;
 import com.github.kpgtb.ktools.util.wrapper.ToolsObjectWrapper;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
+import pl.kpgtb.klifesteal.placeholder.LivesPlaceholder;
 import pl.kpgtb.klifesteal.util.LifestealWrapper;
 
 import java.util.ArrayList;
@@ -72,6 +76,7 @@ public final class KLifesteal extends JavaPlugin {
         resourcePack.registerCustomModelData(packageUtil.getTag(),2000, "soul.png", getResource("assets/soul.png"), Material.IRON_NUGGET);
         resourcePack.registerCustomModelData(packageUtil.getTag(),2001, "csoul.png", getResource("assets/csoul.png"), Material.IRON_NUGGET);
         resourcePack.registerCustomModelData(packageUtil.getTag(),2002, "reviver.png", getResource("assets/reviver.png"), Material.IRON_NUGGET);
+        resourcePack.registerCustomModelData(packageUtil.getTag(),2003, "heart.png", getResource("assets/heart.png"), Material.IRON_NUGGET);
 
         LifestealWrapper wrapper = new LifestealWrapper(initializer,bar);
         adventure = wrapper.getAdventure();
@@ -91,7 +96,13 @@ public final class KLifesteal extends JavaPlugin {
         ListenerManager listener = new ListenerManager(wrapper,getFile());
         listener.registerListeners(packageUtil.get("listener"));
 
+        if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new LivesPlaceholder(wrapper).register();
+        }
+
         new Metrics(this, 18903);
+        UpdaterManager updater = new UpdaterManager(getDescription(),new SpigotUpdater(""), wrapper.getDebugManager());
+        updater.checkUpdate();
     }
 
     @Override
