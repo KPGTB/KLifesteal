@@ -1,0 +1,9 @@
+name: KLifesteal
+version: '${project.version}'
+main: pl.kpgtb.klifesteal.KLifesteal
+api-version: 1.14
+depend: [KTools]
+softdepend: [PlaceholderAPI]
+authors: [KPG_TB]
+description: An advanced & modern lifesteal-style plugin
+website: kpgtb.pl
