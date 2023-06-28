@@ -1,11 +1,11 @@
 ban:
   banReason:
-    - "<gray>[<gradient:blue:green>KLifesteal<gray>]<reset>"
-    - "<red>Sorry, but your game has just ended!"
+    - "<gray>[<gradient:aqua:green>KLifesteal<gray>]<reset>"
+    - "<red>Sorry, but your game has been just ended!"
     - "<red>You lost all your lives!"
     - "<red>But don't worry! Your friend can revive you by crafting a revive token."
-    - "<blue><g>Wait for it, and don't forget about our server!"
-    - "<dark_blue>Thanks for playing!"
+    - "<aqua>Wait for it, and don't forget about our server!"
+    - "<blue>Thanks for playing!"
   unbanned: "<green>Player <aqua><player> <green>has been revived!"
 item:
   soulName: "<gray><b>Soul of <obf>player"

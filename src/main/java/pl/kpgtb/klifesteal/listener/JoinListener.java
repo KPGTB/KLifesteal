@@ -22,6 +22,7 @@ import com.github.kpgtb.ktools.util.wrapper.ToolsObjectWrapper;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 import pl.kpgtb.klifesteal.data.Banned;
 import pl.kpgtb.klifesteal.util.LifestealWrapper;
 
@@ -43,9 +44,14 @@ public class JoinListener extends KListener {
             return;
         }
 
-        player.kickPlayer(String.join(
-                "\n",
-                wrapper.getLanguageManager().getString(LanguageLevel.PLUGIN, "banReason")
-        ));
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                player.kickPlayer(String.join(
+                        "\n",
+                        wrapper.getLanguageManager().getString(LanguageLevel.PLUGIN, "banReason")
+                ));
+            }
+        }.runTaskLater(wrapper.getPlugin(), 5L);
     }
 }

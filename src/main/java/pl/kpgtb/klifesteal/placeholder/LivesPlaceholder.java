@@ -49,10 +49,13 @@ public class LivesPlaceholder extends PlaceholderExpansion {
 
     @Override
     public @Nullable String onRequest(OfflinePlayer player, @NotNull String params) {
-        OfflinePlayer target = player;
+        Player target = player.isOnline() ? player.getPlayer() : null;
         if(!params.isEmpty()) {
-            target = Bukkit.getOfflinePlayer(params);
+            target = Bukkit.getPlayer(params);
         }
-        return String.valueOf(wrapper.getLivesBar().getSaveMethod().get(wrapper,wrapper.getLivesBar(),target));
+        if(target == null) {
+            return "0.0";
+        }
+        return String.valueOf(wrapper.getBarManager().getValue(wrapper.getLivesBar(),target));
     }
 }
