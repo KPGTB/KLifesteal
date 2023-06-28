@@ -1,0 +1,25 @@
+ban:
+  banReason:
+    - "<gray>[<gradient:blue:green>KLifesteal<gray>]<reset>"
+    - "<red>Sorry, but your game has just ended!"
+    - "<red>You lost all your lives!"
+    - "<red>But don't worry! Your friend can revive you by crafting a revive token."
+    - "<blue><g>Wait for it, and don't forget about our server!"
+    - "<dark_blue>Thanks for playing!"
+  unbanned: "<green>Player <aqua><player> <green>has been revived!"
+item:
+  soulName: "<gray><b>Soul of <obf>player"
+  soulLore:
+    - "<gray>Can be used to <obf>revive</obf> another <obf>player"
+    - "<gray>It can disappear..."
+  compressedSoulName: "<dark_gray><b>Compressed Soul of <obf>player"
+  compressedSoulLore:
+    - "<gray>Huge power that can be used to some illegal things, like..."
+  reviverName: "<dark_red><b>Revive Totem"
+  reviverLore:
+    - "<red>Remember who was your true friend!"
+gui:
+  reviveGuiName: "<gray>>> <dark_red>REVIVE TOKEN MENU <gray><<"
+  revivePlayerName: "<green>Revive <yellow><b><player>"
+  revivePlayerLore:
+    - "<red>Are you sure that it is a good idea?"
