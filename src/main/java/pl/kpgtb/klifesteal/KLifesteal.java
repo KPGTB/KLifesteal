@@ -101,7 +101,7 @@ public final class KLifesteal extends JavaPlugin {
         }
 
         new Metrics(this, 18903);
-        UpdaterManager updater = new UpdaterManager(getDescription(),new SpigotUpdater(""), wrapper.getDebugManager());
+        UpdaterManager updater = new UpdaterManager(getDescription(),new SpigotUpdater("110849"), wrapper.getDebugManager());
         updater.checkUpdate();
     }
 
