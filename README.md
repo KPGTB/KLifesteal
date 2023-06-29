@@ -1,5 +1,3 @@
-# KLifesteal
-
 [![](https://jitpack.io/v/KPGTB/KLifesteal.svg)](https://jitpack.io/#KPGTB/KLifesteal)
 ![Spigot](https://img.shields.io/badge/Spigot-1.14--1.20-yellow)
 ![License](https://img.shields.io/badge/License-Apache%202.0-orange)
