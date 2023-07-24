@@ -43,8 +43,9 @@ public class BarChangeListener extends KListener {
     public void onChange(BarValueChangeEvent event) throws SQLException {
         if(event.isCancelled()) return;
         if(!event.getBar().equals(wrapper.getLivesBar())) return;
+        if(!event.getPlayer().isOnline()) return;
 
-        Player player = event.getPlayer();
+        Player player = event.getPlayer().getPlayer();
         double newValue = event.getNewValue();
 
         if(newValue != 0.0D) {
